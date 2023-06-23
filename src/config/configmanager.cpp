@@ -313,6 +313,7 @@ bool ConfigManager::load() {
 	boolean[TOGGLE_GOLD_POUCH_ALLOW_ANYTHING] = getGlobalBoolean(L, "toggleGoldPouchAllowAnything", false);
 	boolean[TOGGLE_SERVER_IS_RETRO] = getGlobalBoolean(L, "toggleServerIsRetroPVP", false);
 	boolean[TOGGLE_TRAVELS_FREE] = getGlobalBoolean(L, "toggleTravelsFree", false);
+	boolean[DEVELOPMENT_MODE] = getGlobalBoolean(L, "developmentMode", true);
 
 	boolean[TOGGLE_HAZARDSYSTEM] = getGlobalBoolean(L, "toogleHazardSystem", true);
 	integer[HAZARD_CRITICAL_INTERVAL] = getGlobalNumber(L, "hazardCriticalInterval", 2000);
@@ -327,6 +328,9 @@ bool ConfigManager::load() {
 	integer[HAZARD_PODS_DAMAGE] = getGlobalNumber(L, "hazardPodsDamage", 5);
 	integer[HAZARD_SPAWN_PLUNDER_MULTIPLIER] = getGlobalNumber(L, "hazardSpawnPlunderMultiplier", 25);
 	integer[LOW_LEVEL_BONUS_EXP] = getGlobalNumber(L, "lowLevelBonusExp", 50);
+
+	boolean[TOGGLE_WHEELSYSTEM] = getGlobalBoolean(L, "wheelSystemEnabled", true);
+	integer[WHEEL_POINTS_PER_LEVEL] = getGlobalNumber(L, "wheelPointsPerLevel", 1);
 
 	loaded = true;
 	lua_close(L);
