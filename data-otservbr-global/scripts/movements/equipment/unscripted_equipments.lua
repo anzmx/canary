@@ -156,6 +156,18 @@ local items = {
 		slot = "armor"
 	},
 	{
+		-- broken iks sandals
+		itemid = 40534,
+		type = "equip",
+		slot = "feet"
+	},
+	{
+		-- broken iks sandals
+		itemid = 40534,
+		type = "deequip",
+		slot = "feet"
+	},
+	{
 		-- 25 years backpack
 		itemid = 39693,
 		type = "equip",
@@ -778,6 +790,18 @@ local items = {
 		itemid = 39147,
 		type = "deequip",
 		slot = "armor"
+	},
+	{
+		-- green demon slippers
+		itemid = 37610,
+		type = "equip",
+		slot = "feet"
+	},
+	{
+		-- green demon slippers
+		itemid = 37610,
+		type = "deequip",
+		slot = "feet"
 	},
 	{
 		-- green demon helmet
@@ -2249,6 +2273,18 @@ local items = {
 		itemid = 32099,
 		type = "deequip",
 		slot = "armor"
+	},
+	{
+		-- traditional leather shoes
+		itemid = 32098,
+		type = "equip",
+		slot = "feet"
+	},
+	{
+		-- traditional leather shoes
+		itemid = 32098,
+		type = "deequip",
+		slot = "feet"
 	},
 	{
 		-- meat hammer
@@ -15000,15 +15036,13 @@ local items = {
 		-- pair of soft boots
 		itemid = 6529,
 		type = "equip",
-		slot = "feet",
-		level = 10
+		slot = "feet"
 	},
 	{
 		-- pair of soft boots
 		itemid = 6529,
 		type = "deequip",
-		slot = "feet",
-		level = 10
+		slot = "feet"
 	},
 	{
 		-- tortoise shield
@@ -15787,15 +15821,13 @@ local items = {
 		-- pair of soft boots
 		itemid = 3549,
 		type = "equip",
-		slot = "feet",
-		level = 10
+		slot = "feet"
 	},
 	{
 		-- pair of soft boots
 		itemid = 3549,
 		type = "deequip",
-		slot = "feet",
-		level = 10
+		slot = "feet"
 	},
 	{
 		-- scythe
