@@ -3621,9 +3621,10 @@ void ProtocolGame::sendStats() {
 void ProtocolGame::sendBasicData() {
 	NetworkMessage msg;
 	msg.addByte(0x9F);
-	if (player->isPremium()) {
+	if (player->isPremium() || player->isVIP()) {
 		msg.addByte(1);
-		msg.add<uint32_t>(time(nullptr) + (player->premiumDays * 86400));
+		uint32_t days = !g_configManager().getBoolean(VIP_SYSTEM_ENABLED) ? player->premiumDays : player->vipDays;
+		msg.add<uint32_t>(time(nullptr) + (days * 86400));
 	} else {
 		msg.addByte(0);
 		msg.add<uint32_t>(0);
@@ -3712,7 +3713,7 @@ void ProtocolGame::sendBlessStatus() {
 }
 
 void ProtocolGame::sendPremiumTrigger() {
-	if (!g_configManager().getBoolean(FREE_PREMIUM)) {
+	if (!g_configManager().getBoolean(FREE_PREMIUM) && !g_configManager().getBoolean(VIP_SYSTEM_ENABLED)) {
 		NetworkMessage msg;
 		msg.addByte(0x9E);
 		msg.addByte(16);
@@ -6340,6 +6341,13 @@ void ProtocolGame::sendSpellCooldown(uint16_t spellId, uint32_t time) {
 			msg.addByte(spellId);
 		} else {
 			msg.add<uint16_t>(spellId);
+		}
+	}
+	if (spellId >= 194 && spellId <= 197 && g_configManager().getBoolean(VIP_SYSTEM_ENABLED) && player && player->isVIP()) {
+		int32_t timeDebit = g_configManager().getNumber(VIP_SYSTEM_FAMILIAR_TIME_DEBIT);
+		if (timeDebit > 0) {
+			uint32_t cooldown = time / 120000; // Convert time to minutes and divide by 2
+			time -= static_cast<uint32_t>(((timeDebit <= cooldown) ? timeDebit : cooldown) * 60000);
 		}
 	}
 	msg.add<uint32_t>(time);

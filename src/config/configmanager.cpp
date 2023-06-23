@@ -331,6 +331,15 @@ bool ConfigManager::load() {
 
 	boolean[TOGGLE_WHEELSYSTEM] = getGlobalBoolean(L, "wheelSystemEnabled", true);
 	integer[WHEEL_POINTS_PER_LEVEL] = getGlobalNumber(L, "wheelPointsPerLevel", 1);
+	// Vip System
+	boolean[VIP_SYSTEM_ENABLED] = getGlobalBoolean(L, "vipSystemEnabled", false);
+	integer[VIP_SYSTEM_EXP_PERCENT] = getGlobalNumber(L, "vipSystemExpPercent", 0);
+	integer[VIP_SYSTEM_LOOT_PERCENT] = getGlobalNumber(L, "vipSystemLootPercent", 0);
+	boolean[VIP_SYSTEM_GAIN_COINS_ENABLED] = getGlobalBoolean(L, "vipSystemGainCoinsEnabled", false);
+	boolean[VIP_SYSTEM_GAIN_TOKENS_ENABLED] = getGlobalBoolean(L, "vipSystemGainTokensEnabled", false);
+	boolean[VIP_SYSTEM_AUTO_LOOT_ONLY_VIP] = getGlobalBoolean(L, "vipSystemAutoLootOnlyVip", false);
+	integer[VIP_SYSTEM_FAMILIAR_TIME_DEBIT] = getGlobalNumber(L, "vipSystemFamiliarTimeDebit", 0);
+	boolean[VIP_SYSTEM_CAN_KICK_IDLE_PLAYER] = getGlobalBoolean(L, "vipSystemCanKickIdlePlayer", false);
 
 	loaded = true;
 	lua_close(L);

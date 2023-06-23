@@ -206,6 +206,17 @@ void ConfigFunctions::init(lua_State* L) {
 	registerEnumIn(L, "configKeys", HAZARD_PODS_DAMAGE);
 	registerEnumIn(L, "configKeys", TOGGLE_HAZARDSYSTEM);
 	registerEnumIn(L, "configKeys", LOW_LEVEL_BONUS_EXP);
+
+	registerEnumIn(L, "configKeys", AUTOLOOT);
+
+	registerEnumIn(L, "configKeys", VIP_SYSTEM_ENABLED);
+	registerEnumIn(L, "configKeys", VIP_SYSTEM_EXP_PERCENT);
+	registerEnumIn(L, "configKeys", VIP_SYSTEM_LOOT_PERCENT);
+	registerEnumIn(L, "configKeys", VIP_SYSTEM_GAIN_COINS_ENABLED);
+	registerEnumIn(L, "configKeys", VIP_SYSTEM_GAIN_TOKENS_ENABLED);
+	registerEnumIn(L, "configKeys", VIP_SYSTEM_AUTO_LOOT_ONLY_VIP);
+	registerEnumIn(L, "configKeys", VIP_SYSTEM_FAMILIAR_TIME_DEBIT);
+	registerEnumIn(L, "configKeys", VIP_SYSTEM_CAN_KICK_IDLE_PLAYER);
 #undef registerEnumIn
 }
 
